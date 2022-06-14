@@ -85,8 +85,38 @@ switch (option)
         UC9.RetriveRecords_IsLike_True(productReviewList);
         break;
     case 10:
+
+
+        List<ProductReview> productReviewList1 = new List<ProductReview>();
+
+        productReviewList1.Add(new ProductReview() { ProductID = 1, UserID = 1, Rating = 1, Review = "Bad", isLike = false });
+        productReviewList1.Add(new ProductReview() { ProductID = 1, UserID = 1, Rating = 2, Review = "BelowAverage", isLike = false });
+        productReviewList1.Add(new ProductReview() { ProductID = 1, UserID = 1, Rating = 3, Review = "Average", isLike = false });
+        productReviewList1.Add(new ProductReview() { ProductID = 1, UserID = 1, Rating = 4, Review = "Good", isLike = true });
+        productReviewList1.Add(new ProductReview() { ProductID = 1, UserID = 1, Rating = 5, Review = "Excellent", isLike = true });
+        productReviewList1.Add(new ProductReview() { ProductID = 2, UserID = 2, Rating = 1, Review = "Bad", isLike = false });
+        productReviewList1.Add(new ProductReview() { ProductID = 2, UserID = 2, Rating = 2, Review = "BelowAverage", isLike = false });
+        productReviewList1.Add(new ProductReview() { ProductID = 2, UserID = 2, Rating = 3, Review = "Average", isLike = false });
+        productReviewList1.Add(new ProductReview() { ProductID = 2, UserID = 2, Rating = 4, Review = "Good", isLike = true });
+        productReviewList1.Add(new ProductReview() { ProductID = 2, UserID = 2, Rating = 5, Review = "Excellent", isLike = true });
+        productReviewList1.Add(new ProductReview() { ProductID = 3, UserID = 3, Rating = 1, Review = "Bad", isLike = false });
+        productReviewList1.Add(new ProductReview() { ProductID = 3, UserID = 3, Rating = 2, Review = "BelowAverage", isLike = false });
+        productReviewList1.Add(new ProductReview() { ProductID = 3, UserID = 3, Rating = 3, Review = "Average", isLike = false });
+        productReviewList1.Add(new ProductReview() { ProductID = 3, UserID = 3, Rating = 4, Review = "Good", isLike = true });
+        productReviewList1.Add(new ProductReview() { ProductID = 4, UserID = 3, Rating = 5, Review = "Excellent", isLike = true });
+        productReviewList1.Add(new ProductReview() { ProductID = 4, UserID = 4, Rating = 1, Review = "Bad", isLike = false });
+        productReviewList1.Add(new ProductReview() { ProductID = 6, UserID = 4, Rating = 2, Review = "BelowAverage", isLike = false });
+        productReviewList1.Add(new ProductReview() { ProductID = 5, UserID = 4, Rating = 3, Review = "Average", isLike = false });
+        productReviewList1.Add(new ProductReview() { ProductID = 5, UserID = 4, Rating = 4, Review = "Good", isLike = true });
+        productReviewList1.Add(new ProductReview() { ProductID = 5, UserID = 4, Rating = 5, Review = "Excellent", isLike = true });
+        productReviewList1.Add(new ProductReview() { ProductID = 6, UserID = 10, Rating = 1, Review = "Bad", isLike = false });
+        productReviewList1.Add(new ProductReview() { ProductID = 6, UserID = 10, Rating = 2, Review = "BelowAverage", isLike = false });
+        productReviewList1.Add(new ProductReview() { ProductID = 6, UserID = 10, Rating = 3, Review = "Average", isLike = false });
+        productReviewList1.Add(new ProductReview() { ProductID = 6, UserID = 10, Rating = 4, Review = "Good", isLike = true });
+        productReviewList1.Add(new ProductReview() { ProductID = 6, UserID = 10, Rating = 5, Review = "Excellent", isLike = true });
+
         ProductManagement UC10 = new ProductManagement();
-        UC10.AvgRating(productReviewList);
+        UC10.AvgRating(productReviewList1);
         break;
     default:
         Console.WriteLine("Please choose the correct option!");

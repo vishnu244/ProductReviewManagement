@@ -131,12 +131,8 @@ namespace ProductReviewManagement
             }
         }
 
-
         public void AvgRating(List<ProductReview> productreviewlist)
         {
-            //var res = productreviewlist.Average(a => a.Rating);
-            //Console.WriteLine("Average rating :"+res);
-
             foreach (var line in productreviewlist.GroupBy(info => info.ProductID).Select(group => new
             {
                 products = group.Key,
