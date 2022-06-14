@@ -43,7 +43,7 @@ productReviewList.Add(new ProductReview() { ProductID = 25, UserID = 10, Rating 
 
 
 
-Console.WriteLine("Select \n1)Create ProductReview Class with 25 Default values\n2)Retrive Top 3 Records of Top 3 Rating Values\n3)Details from Records(1,4,9) with rating>3 \n4)Count By ProductID\n5)Retreive ProductID and ProductReview");
+Console.WriteLine("Select \n1)Create ProductReview Class with 25 Default values\n2)Retrive Top 3 Records of Top 3 Rating Values\n3)Details from Records(1,4,9) with rating>3 \n4)Count By ProductID\n5)Retreive ProductID and ProductReview\n6)skip Top 5 Records from list");
 int option = Convert.ToInt16(Console.ReadLine());
 switch (option)
 {
@@ -69,6 +69,10 @@ switch (option)
         {
             Console.WriteLine("ProductID :" + list.ProductID + "  " + "Review :" + list.Review );
         }
+        break;
+    case 6:
+        ProductManagement UC6 = new ProductManagement();
+        UC6.SkipTop5Records(productReviewList);
         break;
     default:
         Console.WriteLine("Please choose the correct option!");
