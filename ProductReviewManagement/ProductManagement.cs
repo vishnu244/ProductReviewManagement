@@ -36,6 +36,7 @@ namespace ProductReviewManagement
         }
 
 
+        ///Retreive Count of Review Present for each ProductID
         public void CountRecordsbyProductID(List<ProductReview> productreviewlist)
         {
             foreach (var line in productreviewlist.GroupBy(info => info.ProductID)
@@ -50,5 +51,9 @@ namespace ProductReviewManagement
                 Console.WriteLine("Product Id:{0} => Count :{1}", line.products, line.Count);
             }
         }
+
+        ///Retrieve only productId and review from the list for all records.
+
+        
     }
 }

@@ -43,7 +43,7 @@ productReviewList.Add(new ProductReview() { ProductID = 25, UserID = 10, Rating 
 
 
 
-Console.WriteLine("Select \n1)Create ProductReview Class with 25 Default values\n2)Retrive Top 3 Records of Top 3 Rating Values\n3)Details from Records(1,4,9) with rating>3 \n4)Count By ProductID");
+Console.WriteLine("Select \n1)Create ProductReview Class with 25 Default values\n2)Retrive Top 3 Records of Top 3 Rating Values\n3)Details from Records(1,4,9) with rating>3 \n4)Count By ProductID\n5)Retreive ProductID and ProductReview");
 int option = Convert.ToInt16(Console.ReadLine());
 switch (option)
 {
@@ -63,6 +63,12 @@ switch (option)
     case 4:
         ProductManagement UC4 = new ProductManagement();
         UC4.CountRecordsbyProductID(productReviewList);
+        break;
+    case 5:
+        foreach (var list in productReviewList)
+        {
+            Console.WriteLine("ProductID :" + list.ProductID + "  " + "Review :" + list.Review );
+        }
         break;
     default:
         Console.WriteLine("Please choose the correct option!");
