@@ -84,6 +84,10 @@ switch (option)
         ProductManagement UC9 = new ProductManagement();
         UC9.RetriveRecords_IsLike_True(productReviewList);
         break;
+    case 10:
+        ProductManagement UC10 = new ProductManagement();
+        UC10.AvgRating(productReviewList);
+        break;
     default:
         Console.WriteLine("Please choose the correct option!");
         break;

@@ -122,12 +122,28 @@ namespace ProductReviewManagement
         public void RetriveRecords_IsLike_True(List<ProductReview> productReviewList)
         {
             var ProductData1 = (from productReview in productReviewList
-                               where (productReview.isLike = true ) && productReview.Rating > 3
+                               where (productReview.isLike == true ) 
                                 select productReview);
 
             foreach (var list in ProductData1)
             {
                 Console.WriteLine("ProductID :" + list.ProductID + "  " + "UserID :" + list.UserID + "  " + "Rating :" + list.Rating + "  " + "Review :" + list.Review + "  " + "isLike :" + list.isLike);
+            }
+        }
+
+
+        public void AvgRating(List<ProductReview> productreviewlist)
+        {
+            //var res = productreviewlist.Average(a => a.Rating);
+            //Console.WriteLine("Average rating :"+res);
+
+            foreach (var line in productreviewlist.GroupBy(info => info.ProductID).Select(group => new
+            {
+                products = group.Key,
+                Count = group.Average(a => a.Rating)
+            }))
+            {
+                Console.WriteLine("Product Id:{0} => Average Rating :{1}", line.products, line.Count);
             }
         }
 
