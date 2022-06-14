@@ -45,7 +45,7 @@ productReviewList.Add(new ProductReview() { ProductID = 25, UserID = 10, Rating 
 
 
 Console.WriteLine("Select \n1)Create ProductReview Class with 25 Default values\n2)Retrive Top 3 Records of Top 3 Rating Values\n3)Details from Records(1,4,9) with rating>3 \n4)Count By ProductID\n5)Retreive ProductID and ProductReview\n6)skip Top 5 Records from list\n8)Creating " +
-    "DataTables\n9)Retreive details who's islike value is true\n10)Average Rating of Each Product\n11)Records Whose Review is Nice");
+    "DataTables\n9)Retreive details who's islike value is true\n10)Average Rating of Each Product\n11)Records Whose Review is Nice\n12)Records whose UserID=10 and Order by rating");
 int option = Convert.ToInt16(Console.ReadLine());
 switch (option)
 {
@@ -121,6 +121,10 @@ switch (option)
     case 11:
         ProductManagement UC11 = new ProductManagement();
         UC11.RetriveRecordsReviewIS_Nice(productReviewList);
+        break;
+    case 12:
+        ProductManagement UC12 = new ProductManagement();
+        UC12.RetriveRecordsUser1d_10(productReviewList);
         break;
     default:
         Console.WriteLine("Please choose the correct option!");
