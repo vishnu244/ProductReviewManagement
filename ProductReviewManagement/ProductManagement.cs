@@ -116,5 +116,20 @@ namespace ProductReviewManagement
             }
         }
 
+
+        //retrive Data from datatable who's islike value is true
+
+        public void RetriveRecords_IsLike_True(List<ProductReview> productReviewList)
+        {
+            var ProductData1 = (from productReview in productReviewList
+                               where (productReview.isLike = true ) && productReview.Rating > 3
+                                select productReview);
+
+            foreach (var list in ProductData1)
+            {
+                Console.WriteLine("ProductID :" + list.ProductID + "  " + "UserID :" + list.UserID + "  " + "Rating :" + list.Rating + "  " + "Review :" + list.Review + "  " + "isLike :" + list.isLike);
+            }
+        }
+
     }
 }

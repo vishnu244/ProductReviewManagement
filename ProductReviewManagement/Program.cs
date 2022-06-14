@@ -43,7 +43,9 @@ productReviewList.Add(new ProductReview() { ProductID = 25, UserID = 10, Rating 
 
 
 
-Console.WriteLine("Select \n1)Create ProductReview Class with 25 Default values\n2)Retrive Top 3 Records of Top 3 Rating Values\n3)Details from Records(1,4,9) with rating>3 \n4)Count By ProductID\n5)Retreive ProductID and ProductReview\n6)skip Top 5 Records from list\n8)Creating DataTables");
+
+Console.WriteLine("Select \n1)Create ProductReview Class with 25 Default values\n2)Retrive Top 3 Records of Top 3 Rating Values\n3)Details from Records(1,4,9) with rating>3 \n4)Count By ProductID\n5)Retreive ProductID and ProductReview\n6)skip Top 5 Records from list\n8)Creating " +
+    "DataTables\n9)Retreive details who's islike value is true");
 int option = Convert.ToInt16(Console.ReadLine());
 switch (option)
 {
@@ -77,6 +79,10 @@ switch (option)
     case 8:
         ProductManagement UC8 = new ProductManagement();
         UC8.Datatables();
+        break;
+    case 9:
+        ProductManagement UC9 = new ProductManagement();
+        UC9.RetriveRecords_IsLike_True(productReviewList);
         break;
     default:
         Console.WriteLine("Please choose the correct option!");
