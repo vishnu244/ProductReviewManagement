@@ -40,7 +40,20 @@ productReviewList.Add(new ProductReview() { ProductID = 24, UserID = 10, Rating 
 productReviewList.Add(new ProductReview() { ProductID = 25, UserID = 10, Rating = 5, Review = "Excellent", isLike = true });
 
 //Display list
-foreach (var list in productReviewList)
+
+
+
+Console.WriteLine("Select \n1)Create ProductReview Class with 25 Default values\n2)Retrive Top 3 Records of Top 3 Rating Values");
+int option = Convert.ToInt16(Console.ReadLine());
+switch (option)
 {
-    Console.WriteLine("ProductID :" + list.ProductID + "  " + "UserID :" + list.UserID + "  " + "Rating :" + list.Rating + "  " + "Review :" + list.Review + "  " + "isLike :" + list.isLike);
+    case 1:
+        foreach (var list in productReviewList)
+        {
+            Console.WriteLine("ProductID :" + list.ProductID + "  " + "UserID :" + list.UserID + "  " + "Rating :" + list.Rating + "  " + "Review :" + list.Review + "  " + "isLike :" + list.isLike);
+        }
+        break;
+    case 2:
+        ProductManagement.Top3Records(productReviewList);
+        break;
 }
