@@ -131,6 +131,8 @@ namespace ProductReviewManagement
             }
         }
 
+
+        //uc10 retrive Average Rating for each productid
         public void AvgRating(List<ProductReview> productreviewlist)
         {
             foreach (var line in productreviewlist.GroupBy(info => info.ProductID).Select(group => new
@@ -142,6 +144,21 @@ namespace ProductReviewManagement
                 Console.WriteLine("Product Id:{0} => Average Rating :{1}", line.products, line.Count);
             }
         }
+
+
+        //uc11 Retreive all records from the list who’s review message contain “nice”
+        public void RetriveRecordsReviewIS_Nice(List<ProductReview> productreviewlist)
+        {
+            foreach (var list in (from productReviews in productreviewlist
+                                  where productReviews.Review == "nice"
+                                  select productReviews))
+            {
+                Console.WriteLine("ProductID:- " + list.ProductID + " " + "UserID:- " + list.UserID
+                      + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "IsLike:- " + list.isLike);
+            }
+        }
+
+
 
     }
 }
