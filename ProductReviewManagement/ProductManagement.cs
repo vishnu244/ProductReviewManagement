@@ -171,7 +171,17 @@ namespace ProductReviewManagement
             }
         }
 
-
+        //UC7 Retrive ProductID and Review using SELECT operator
+        public void RetrieveProductIdAndReview(List<ProductReview> listProductReviews)
+        {
+            //lambda syntax
+            var recordData = listProductReviews.Select(x => new { ProductId = x.ProductID, Review = x.Review });
+            Console.WriteLine("\nProduct id and review = ");
+            foreach (var list in recordData)
+            {
+                Console.WriteLine(list.ProductId + "------" + list.Review);
+            }
+        }
 
     }
 }
